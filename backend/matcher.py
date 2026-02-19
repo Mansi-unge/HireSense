@@ -1,7 +1,14 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-def match_score(resume, jd):
-    tfidf = TfidfVectorizer()
-    vectors = tfidf.fit_transform([resume, jd])
-    return round(cosine_similarity(vectors)[0][1] * 100, 2)
+def calculate_match_score(resume_text, jd_text):
+    """
+    Calculates similarity score between resume and job description
+    using TF-IDF and cosine similarity.
+    """
+    vectorizer = TfidfVectorizer()
+
+    vectors = vectorizer.fit_transform([resume_text, jd_text])
+    similarity = cosine_similarity(vectors)[0][1]
+
+    return round(similarity * 100, 2)

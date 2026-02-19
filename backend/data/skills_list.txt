@@ -1,0 +1,11 @@
+python
+java
+sql
+flask
+django
+machine learning
+nlp
+data analysis
+react
+docker
+git
