@@ -14,10 +14,10 @@
 
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-<style>
-   body {
+  <style>
+    body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #f4f6fb;
@@ -29,7 +29,7 @@
       height: 100vh;
       padding: 20px;
     }
-</style>
+  </style>
 </head>
 
 <body>
@@ -58,8 +58,7 @@
               <div class="progress-bar
                 {% if match_category == 'good' %}bg-success
                 {% elif match_category == 'average' %}bg-warning
-                {% else %}bg-danger{% endif %}"
-                style="width: {{ score }}%">
+                {% else %}bg-danger{% endif %}" style="width: {{ score }}%">
               </div>
             </div>
 
@@ -146,12 +145,20 @@
           {% endif %}
 
           <!-- Action -->
-          <div class="text-center mt-3">
+          <div class="text-center mt-3 d-flex justify-content-center gap-2">
+            <!-- Analyze Another Resume -->
             <a href="/" class="btn btn-outline-primary btn-sm">
               <i class="fa-solid fa-rotate-left me-1"></i>
               Analyze Another Resume
             </a>
+
+            <!-- View Dashboard -->
+            <a href="/dashboard" class="btn btn-outline-success btn-sm">
+              <i class="fa-solid fa-table me-1"></i>
+              View Analysis History
+            </a>
           </div>
+
 
         </div>
       </div>
@@ -205,4 +212,5 @@
   </div>
 
 </body>
+
 </html>
